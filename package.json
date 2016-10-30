@@ -1,0 +1,37 @@
+{
+  "name": "gulp-express",
+  "version": "1.0.0",
+  "description": "run express app and manage assets with gulp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gulp",
+    "express"
+  ],
+  "author": "alex rdz",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-stylus": "^0.11.0",
+    "axis": "^0.6.1",
+    "browser-sync": "^2.17.5",
+    "gulp": "^3.9.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-cache": "^0.4.5",
+    "gulp-concat": "^2.6.0",
+    "gulp-if": "^2.0.1",
+    "gulp-imagemin": "^3.1.0",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.1.0",
+    "gulp-stylus": "^2.5.0",
+    "gulp-uglify": "^2.0.0",
+    "minimist": "^1.2.0",
+    "rupture": "^0.6.2",
+    "yeticss": "^7.3.0"
+  },
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
