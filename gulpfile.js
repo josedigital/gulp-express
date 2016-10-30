@@ -48,10 +48,10 @@ gulp.task('imagemin', function () {
 gulp.task('stylus', function () {
   gulp.src('src/css/styles.styl')
   .pipe(plumber())
-  .pipe(stylus({
-    use:[prefixer(), yeticss(), axis(), rupture()],
-    compress: env.p,
-  }))
+    .pipe(stylus({
+      use:[prefixer(), yeticss(), axis(), rupture()],
+      compress: env.p
+    }))
   .pipe(gulp.dest('public/css'));
 });
 
