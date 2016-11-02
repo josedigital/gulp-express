@@ -15,6 +15,7 @@
   "devDependencies": {
     "autoprefixer-stylus": "^0.11.0",
     "axis": "^0.6.1",
+    "body-parser": "^1.15.2",
     "browser-sync": "^2.17.5",
     "gulp": "^3.9.1",
     "gulp-browserify": "^0.5.1",
@@ -28,6 +29,7 @@
     "gulp-stylus": "^2.5.0",
     "gulp-uglify": "^2.0.0",
     "minimist": "^1.2.0",
+    "pug": "^2.0.0-beta6",
     "rupture": "^0.6.2",
     "yeticss": "^7.3.0"
   },

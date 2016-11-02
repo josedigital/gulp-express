@@ -2,7 +2,7 @@
 
 var env         = require('minimist')(process.argv.slice(2));
 var gulp        = require('gulp');
-var broswerSync = require('browser-sync');
+var browserSync = require('browser-sync');
 var nodemon     = require('gulp-nodemon');
 var plumber     = require('gulp-plumber');
 var pug         = require('gulp-pug');
@@ -17,16 +17,20 @@ var axis        = require('axis');
 var prefixer    = require('autoprefixer-stylus');
 var imagemin    = require('gulp-imagemin');
 var cache       = require('gulp-cache');
+var pageData    = require('./src/views/data/data');
 // look into deploying with gulp
 // http://mikeeverhart.net/2016/01/deploy-code-to-remote-servers-with-gulp-js/
 
 
 
-// call pug to compile templates
+// call pug to compile views
 gulp.task('pug', function () {
-  return gulp.src('src/templates/*.pug')
+  return gulp.src('src/views/*.pug')
     .pipe(plumber())
-    .pipe(pug({pretty: !env.p}))
+    .pipe(pug({
+      pretty: !env.p,
+      data: pageData
+    }))
     .pipe(gulp.dest('public/'));
 });
 
@@ -76,12 +80,12 @@ gulp.task('browserify', function () {
 // nodemon - start and keep from restarting server
 gulp.task('nodemon', function(callback) {
   return nodemon({
-    script: 'src/app.js'
+    script: 'app.js'
   }).once('start', callback);
 });
 
 gulp.task('watch', function () {
-  gulp.watch('src/templates/**/*.pug', ['pug']);
+  gulp.watch('src/views/**/*.pug', ['pug']);
   gulp.watch('src/css/**/*.styl', ['stylus']);
   gulp.watch('src/js/**/*.js', [(env.fy) ? 'browserify' : 'js']);
   gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
@@ -89,9 +93,9 @@ gulp.task('watch', function () {
 
 // sync dev actions with browser - browser-sync -> which calls nodemon
 gulp.task('browser-sync', ['nodemon'], function() {
-  broswerSync.init(null, {
-    proxy: 'http://localhost:3000',
-    files: ['public/**/*.*'],
+  browserSync.init(null, {
+    proxy: 'http://localhost:3000/',
+    files: ['./public/**/*.*'],
     browser: 'google chrome',
     port: 4000
   });

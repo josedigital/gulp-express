@@ -5,22 +5,20 @@ html
     meta(name="desctiption" content="")
     meta(name="desctiption" content="")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    link(rel='stylesheet', href='css/styles.css')
+    link(rel='stylesheet', href='/css/styles.css')
   body
-    header
+    nav
       .container
-        h1 this is the header
-        p this is header text
-    
-    section(role="main")
-      .container
-        h2 main section
+        ul
+          li
+            a(href="/") Home
+          li
+            a(href="/about") About
+          li
+            a(href="/contact") Contact
 
 
-    footer
-      .container
-        h6 this is the footer
-        p All information copyright &copy; 2016 | RNR, LLC
+    block content
 
     script(src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous")
     script(src="js/main.js")
