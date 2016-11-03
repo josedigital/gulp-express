@@ -25,7 +25,7 @@ var pageData    = require('./src/views/data/data');
 
 // call pug to compile views
 gulp.task('pug', function () {
-  return gulp.src('src/views/*.pug')
+  return gulp.src('src/views/**/!(_)*.pug')
     .pipe(plumber())
     .pipe(pug({
       pretty: !env.p,
