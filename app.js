@@ -16,6 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // app.use(cookieParser());
 // app.use(express.static('public'));
 app.use('/css', express.static('public/css'));
+app.use('/js', express.static('public/js'));
 
 app.use('/', routes);
 

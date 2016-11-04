@@ -18,6 +18,8 @@ write explanation of all tasks and tools. a wip
 
 ###css & html
 this package uses
-  - [stylus](https://stylus-lang.com) for css.
-  - [yeticss](https://yeticss.com) framework
-  - [pug](https://pugjs.org) for templating
+- [stylus](https://stylus-lang.com) for css.
+- [yeticss](https://yeticss.com) framework
+- [pug](https://pugjs.org) for templating
+- [axis](http://axis.netlify.com/), a large set of plugins for stylus
+- [rupture](http://jescalan.github.io/rupture/) for media queries
