@@ -17,7 +17,7 @@ var axis        = require('axis');
 var prefixer    = require('autoprefixer-stylus');
 var imagemin    = require('gulp-imagemin');
 var cache       = require('gulp-cache');
-var pageData    = require('./src/views/data/data');
+var pageData    = require('./models/data');
 // look into deploying with gulp
 // http://mikeeverhart.net/2016/01/deploy-code-to-remote-servers-with-gulp-js/
 
@@ -25,7 +25,7 @@ var pageData    = require('./src/views/data/data');
 
 // call pug to compile views
 gulp.task('pug', function () {
-  return gulp.src('src/views/**/!(_)*.pug')
+  return gulp.src('views/**/!(_)*.pug')
     .pipe(plumber())
     .pipe(pug({
       pretty: !env.p,
@@ -85,7 +85,7 @@ gulp.task('nodemon', function(callback) {
 });
 
 gulp.task('watch', function () {
-  gulp.watch('src/views/**/*.pug', ['pug']);
+  gulp.watch('views/**/*.pug', ['pug']);
   gulp.watch('src/css/**/*.styl', ['stylus']);
   gulp.watch('src/js/**/*.js', [(env.fy) ? 'browserify' : 'js']);
   gulp.watch('src/img/**/*.{jpg,png,gif}', ['imagemin']);
